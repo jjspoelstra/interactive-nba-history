@@ -22,6 +22,10 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 
     const createYearRoute = (year) => {
 
+        app.get('/', (req,res) => {
+          res.redirect('/2022')
+        })
+
         app.get(`/${year}`, async (req, res) => {
           const db = client.db(`stats_${year}`);
       
