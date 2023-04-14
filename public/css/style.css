@@ -1,0 +1,651 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+img, footer img {
+  height: 4rem;
+  width: fit-content;
+  transition: height .1s linear;
+}
+
+footer img {
+  height: 3rem;
+}
+
+img:hover, footer img:hover {
+  height: 4.5rem;
+}
+
+footer img:hover {
+  height: 3.5rem;
+}
+
+.uta {
+  height: 3rem;
+}
+
+.uta:hover {
+  height: 3.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  /* CSS rules for mobile */
+  img, footer img {
+    height: 3rem;
+  }
+
+  footer img {
+    height: 2rem;
+  }
+
+  img:hover, footer img:hover {
+    height: 3.5rem;
+  }
+
+  footer img:hover {
+    height: 2.5rem;
+  }
+
+}
+
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* general bracket arrangement */
+
+main {
+  display: flex;
+  max-height: 100%;
+  max-width: 100%;
+  position: relative
+}
+
+.firstRound, .secondRound, .thirdRound, .finals, .finalsEast{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 25%;
+  height: 100%;
+}
+
+.secondRound {
+  justify-content: space-around;
+  padding: 5% 0 5% 0;
+}
+
+.finals, .finalsEast {
+  height: 100%;
+}
+
+.finalsEast{
+  transform: rotate(90deg);
+  transform: scaleX(-1)
+    
+}
+
+.finals .border, .finalsEast .border {
+  height: 25%;
+  border-top: 5px solid grey;
+}
+
+
+
+
+/* western conference */
+
+.conference{
+  display: flex;
+  flex: 1;
+  height: 800px;
+  padding-left: 100px;
+}
+
+.firstLeft, .secondLeft, .thirdWest{
+  height: 12.5%;
+  width: 100%;
+  border-top: 5px solid grey;
+  border-right: 5px solid grey;
+  border-bottom: 5px solid grey;
+}
+
+.secondLeft {
+  height: 25%;
+}
+
+.thirdWest {
+  height: 47%;
+}
+
+/* eastern conference */
+
+.eastConference {
+  display: flex;
+  flex: 1;
+  height: 800px;
+  padding-right: 100px;
+}
+
+.firstEast, .secondEast, .thirdEast{
+  height: 12.5%;
+  width: 100%;
+  border-top: 5px solid grey;
+  border-left: 5px solid grey;
+  border-bottom: 5px solid grey;
+}
+
+.secondEast {
+  height: 25%;
+}
+
+.thirdEast {
+  height: 47%;
+}
+
+
+
+
+
+
+/* TEAMS ARRANGEMENT ON THE BRACKET */
+
+.matchup img, .matchupWest img, .matchupSecond img, .matchupSecondWest img, .matchupThird img, .matchupThirdWest img {
+  display: block;
+}
+
+.matchup img, .matchupWest img, .matchupSecond img, .matchupSecondWest img, .matchupThird img, .matchupThirdWest img {
+  height: 4rem;
+  width: fit-content;
+}
+
+@media (max-width: 1200px) {
+  /* CSS rules for 1200px */
+  .matchup img, .matchupWest img, .matchupSecond img, .matchupSecondWest img, .matchupThird img, .matchupThirdWest img {
+    height: 3.5rem;
+  }
+  .matchup, .matchupWest {
+    height: 120px;
+  }
+
+  .matchupSecond, .matchupSecondWest {
+    height: 190px;
+  }
+
+  .matchupThird, .matchupThirdWest {
+    height: 345px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* CSS rules for 900px */
+  .matchup img, .matchupWest img, .matchupSecond img, .matchupSecondWest img, .matchupThird img, .matchupThirdWest img {
+    height: 3rem;
+  }
+}
+
+
+
+.matchup, .matchupWest {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+
+.matchup {
+  transform: translate(50%, -30px);
+}
+
+.matchupWest {
+  transform: translate(-50%, -30px);
+}
+
+.matchupSecond, .matchupSecondWest {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 235px;
+}
+
+.matchupSecond {
+  transform: translate(50%, -13%);
+}
+
+.matchupSecondWest {
+  transform: translate(-50%, -13%);
+}
+
+.matchupThird, .matchupThirdWest {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 430px;
+}
+
+.matchupThird {
+  transform: translate(50%, -7%);
+}
+
+.matchupThirdWest {
+  transform: translate(-50%, -7%);
+}
+
+.westFinalistWinner {
+  position: absolute;
+  transform: translate(-50%, 5%);
+}
+
+.eastFinalistWinner {
+  position: absolute;
+  transform: scaleX(-1) translate(50%);
+}
+
+.champion {
+  transform: translate(25%, 30%);
+  width: 5%;
+}
+
+/* teams */
+footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.eastLotto, .westLotto {
+  display: flex;
+  width: fit-content;
+  align-content: space-between;
+}
+
+.playin {
+  justify-content: space-between;
+}
+
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/* styling player stats */
+
+.statsContainer{
+  justify-content: center;
+}
+
+#stats{
+  position: absolute;
+  transform: translate(-55.5%, 5%);
+  border-radius: 40px;
+  height: 320px;
+  width: 800px;
+  border: 1px solid black;
+  background: white;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  z-index: 2;
+}
+
+.Players{
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 5px;
+}
+
+.player0, .player1, .player2, .player3, .player4, .player5{
+  display: flex;
+  flex-direction: column;
+}
+
+.playerName{
+  font-weight: bold;
+}
+
+/* base gameWon styles */
+/* CHANGE TO RELATIVE */
+.game{
+  width: fit-content;
+  position: absolute;
+  z-index: 1;
+}
+.east .game{
+  width: fit-content;
+  z-index: 1;
+}
+
+/* west 1st round */
+.topSeedWin1 {
+  transform: translate(60px, 5px);
+}
+.lowSeedWin1{
+  transform: translate(60px, 65px);
+}
+.topSeedWin2{
+  transform: translate(75px, 5px);
+}
+.lowSeedWin2{
+  transform: translate(75px, 65px);
+}
+.topSeedWin3{
+  transform: translate(90px, 5px);
+}
+.lowSeedWin3{
+  transform: translate(90px, 65px);
+}
+.topSeedWin4{
+  transform: translate(105px, 5px);
+}
+.lowSeedWin4{
+  transform: translate(105px, 65px);
+}
+
+/* east 1st round */
+.east .topSeedWin1 {
+  transform: translate(135px, 5px);
+}
+.east .lowSeedWin1{
+  transform: translate(135px, 65px);
+}
+.east .topSeedWin2{
+  transform: translate(120px, 5px);
+}
+.east .lowSeedWin2{
+  transform: translate(120px, 65px);
+}
+.east .topSeedWin3{
+  transform: translate(105px, 5px);
+}
+.east .lowSeedWin3{
+  transform: translate(105px, 65px);
+}
+.east .topSeedWin4{
+  transform: translate(90px, 5px);
+}
+.east .lowSeedWin4{
+  transform: translate(90px, 65px);
+}
+
+/* west 2nd round */
+.westUpper .topSeedWin1, .westLower .topSeedWin1 {
+  transform: translate(50px, 5px);
+}
+.westUpper .lowSeedWin1, .westLower .lowSeedWin1{
+  transform: translate(50px, 145px);
+}
+.westUpper .topSeedWin2, .westLower .topSeedWin2{
+  transform: translate(65px, 5px);
+}
+.westUpper .lowSeedWin2, .westLower .lowSeedWin2{
+  transform: translate(65px, 145px);
+}
+.westUpper .topSeedWin3, .westLower .topSeedWin3{
+  transform: translate(80px, 5px);
+}
+.westUpper .lowSeedWin3, .westLower .lowSeedWin3{
+  transform: translate(80px, 145px);
+}
+.westUpper .topSeedWin4, .westLower .topSeedWin4{
+  transform: translate(95px, 5px);
+}
+.westUpper .lowSeedWin4, .westLower .lowSeedWin4{
+  transform: translate(95px, 145px);
+}
+
+/* east 2nd round */
+.eastUpper .topSeedWin1 , .eastLower .topSeedWin1{
+  transform: translate(135px, 5px);
+}
+.eastUpper .lowSeedWin1, .eastLower .lowSeedWin1{
+  transform: translate(135px, 145px);
+}
+.eastUpper .topSeedWin2, .eastLower .topSeedWin2{
+  transform: translate(120px, 5px);
+}
+.eastUpper .lowSeedWin2, .eastLower .lowSeedWin2{
+  transform: translate(120px, 145px);
+}
+.eastUpper .topSeedWin3, .eastLower .topSeedWin3{
+  transform: translate(105px, 5px);
+}
+.eastUpper .lowSeedWin3, .eastLower .lowSeedWin3{
+  transform: translate(105px, 145px);
+}
+.eastUpper .topSeedWin4, .eastLower .topSeedWin4{
+  transform: translate(90px, 5px);
+}
+.eastUpper .lowSeedWin4, .eastLower .lowSeedWin4{
+  transform: translate(90px, 145px);
+}
+
+/* west finals  */
+
+.westFinal .topSeedWin1 {
+  transform: translate(60px, 5px);
+}
+.westFinal .lowSeedWin1{
+  transform: translate(60px, 340px);
+}
+.westFinal .topSeedWin2{
+  transform: translate(75px, 5px);
+}
+.westFinal .lowSeedWin2{
+  transform: translate(75px, 340px);
+}
+.westFinal .topSeedWin3{
+  transform: translate(90px, 5px);
+}
+.westFinal .lowSeedWin3{
+  transform: translate(90px, 340px);
+}
+.westFinal .topSeedWin4{
+  transform: translate(105px, 5px);
+}
+.westFinal .lowSeedWin4{
+  transform: translate(105px, 340px);
+}
+
+/* east finals */
+.eastFinal .topSeedWin1 {
+  transform: translate(140px, 5px);
+}
+.eastFinal .lowSeedWin1{
+  transform: translate(140px, 340px);
+}
+.eastFinal .topSeedWin2{
+  transform: translate(125px, 5px);
+}
+.eastFinal .lowSeedWin2{
+  transform: translate(125px, 340px);
+}
+.eastFinal .topSeedWin3{
+  transform: translate(110px, 5px);
+}
+.eastFinal .lowSeedWin3{
+  transform: translate(110px, 340px);
+}
+.eastFinal .topSeedWin4{
+  transform: translate(95px, 5px);
+}
+.eastFinal .lowSeedWin4{
+  transform: translate(95px, 340px);
+}
+
+
+
+/* finals */
+
+.finals .topSeedWin1 {
+  transform: translate(45px, 20px);
+}
+.eastWinner .lowSeedWin1{
+  transform: translate(150px, 410px);
+}
+.finals .topSeedWin2{
+  transform: translate(60px, 20px);
+}
+.eastWinner .lowSeedWin2{
+  transform: translate(135px, 410px);
+}
+.finals .topSeedWin3{
+  transform: translate(75px, 20px);
+}
+.eastWinner .lowSeedWin3{
+  transform: translate(120px, 410px);
+}
+.finals .topSeedWin4{
+  transform: translate(90px, 20px);
+}
+.eastWinner .lowSeedWin4{
+  transform: translate(105px, 410px);
+}
+
+
+
+  /* team colors */
+.phoWin{
+  color: rgb(229, 95, 32);
+}
+.nopWin{
+  color: rgb(0,22,65);
+}
+.miaWin{
+  color: rgb(152, 0, 46)
+}
+.atlWin{
+  color: rgb(200, 16, 46)
+}
+.phiWin{
+  color: rgb(0, 107, 182)
+}
+.torWin{
+  color: rgb(206, 17, 65)
+}
+.bosWin{
+  color: rgb(0, 122, 51)
+}
+.brkWin{
+  color: black
+}
+.milWin{
+  color: rgb(0, 71, 27)
+}
+.chiWin{
+  color: rgb(206, 17, 65)
+}
+.cleWin{
+  color: rgb(134, 0, 56)
+}
+.choWin{
+  color: rgb(29, 17, 96)
+}
+.nykWin{
+  color: rgb(245, 132, 38)
+}
+.wasWin{
+  color: rgb(0,43,92)
+}
+.indWin{
+  color: rgb(253, 187, 48)
+}
+.detWin{
+  color: rgb(181,179,179)
+}
+.orlWin{
+  color: rgb(0, 125, 197)
+}
+.dalWin{
+  color: rgb(0, 83, 188)
+}
+.utaWin{
+  color: rgb(0, 71, 27)
+}
+.memWin{
+  color: rgb(93, 118, 169)
+}
+.minWin{
+  color: rgb(12, 35, 64)
+}
+.gswWin{
+  color: rgb(255, 199, 44)
+}
+.denWin{
+  color: rgb(139, 35, 50)
+}
+.lacWin{
+  color: rgb(200,16,46)
+}
+.sasWin{
+  color: rgb(196, 206, 211)
+}
+.lalWin{
+  color: rgb(85, 37, 130)
+}
+.sacWin{
+  color: rgb(91,43,130)
+}
+.porWin{
+  color: rgb(224, 58, 62)
+}
+.okcWin{
+  color: rgb(239, 59, 36)
+}
+.houWin{
+  color: rgb(206,17,65)
+}
+/* tooltip test */
+
+.game .toolTipText {
+  width: 60px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  top: 20px;
+  left: -25px;
+  font-size: 13px;
+  font-weight:bold;
+  visibility: collapse;
+  background: white;
+  border: 1px solid black;
+
+}
+
+.game:hover .toolTipText{
+  visibility: visible;
+}
+
+
