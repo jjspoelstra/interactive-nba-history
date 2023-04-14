@@ -22,7 +22,8 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     console.log(`Connected to stats Database`);
 
     app.get('/', (req, res) => {
-      res.redirect('/2022');
+      res.sendFile(__dirname + '/index.html')
+      //res.redirect('/2022')
     });
 
     const createYearRoute = (year) => {
