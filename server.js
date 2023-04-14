@@ -20,11 +20,11 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
   .then(client => {
     console.log(`Connected to stats Database`);
 
-    const createYearRoute = (year) => {
+    app.get('/', (req,res) => {
+      res.redirect('/2022')
+    })
 
-        app.get('/', (req,res) => {
-          res.redirect('/2022')
-        })
+    const createYearRoute = (year) => {
 
         app.get(`/${year}`, async (req, res) => {
           const db = client.db(`stats_${year}`);
@@ -70,6 +70,6 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 
 
 
-    app.listen((process.env.PORT || PORT), ()=>{
+    app.listen(process.env.PORT || PORT, ()=>{
         console.log(`Server running on port ${PORT}`)
     })
