@@ -124,14 +124,14 @@
 
                     <div class = 'secondLeft westUpper click2'>
                         <section class = 'matchupSecondWest'>
-                            <img class = 'west1st8thWinner' src="<%= `img/${west1st8thWinner}.png` %>" alt="">
-                            <img class = 'west4th5thWinner' src="<%= `img/${west4th5thWinner}.png` %>" alt="">
+                            <img class = 'west1st8thWinner' src="<%= `img/${west1st8thWinner.toLowerCase()}.png` %>" alt="">
+                            <img class = 'west4th5thWinner' src="<%= `img/${west4th5thWinner.toLowerCase()}.png` %>" alt="">
                         </section>
                     </div>
                     <div class = 'secondLeft westLower click2'>
                         <section class = 'matchupSecondWest '>
-                            <img class = 'west2nd7thWinner' src="<%= `img/${west2nd7thWinner}.png` %>" alt="">
-                            <img class = 'west3rd6thWinner' src="<%= `img/${west3rd6thWinner}.png` %>" alt="">
+                            <img class = 'west2nd7thWinner' src="<%= `img/${west2nd7thWinner.toLowerCase()}.png` %>" alt="">
+                            <img class = 'west3rd6thWinner' src="<%= `img/${west3rd6thWinner.toLowerCase()}.png` %>" alt="">
                         </section>
                     </div>
                 </section>
@@ -145,8 +145,8 @@
 
                     <div class = 'thirdWest westFinal click3'>
                         <section class = 'matchupThirdWest'>
-                            <img class = 'west1st8th4th5thWinner' src="<%= `img/${west1st8th4th5thWinner}.png` %>" alt="">
-                            <img class = 'west2nd7th3rd6thWinner' src="<%= `img/${west2nd7th3rd6thWinner}.png` %>" alt="">
+                            <img class = 'west1st8th4th5thWinner' src="<%= `img/${west1st8th4th5thWinner.toLowerCase()}.png` %>" alt="">
+                            <img class = 'west2nd7th3rd6thWinner' src="<%= `img/${west2nd7th3rd6thWinner.toLowerCase()}.png` %>" alt="">
                         </section>
                     </div>
                 </section>
@@ -156,7 +156,7 @@
                     <% const westFinalistMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west1st8th4th5thWinner}` && item.team2 === `${west2nd7th3rd6thWinner}`) || (item.team1 === `${west2nd7th3rd6thWinner}` && item.team2 === `${west1st8th4th5thWinner}`)) %>
                     <% const westFinalistWinner = westFinalistMatchup.team1Wins === '4' ? westFinalistMatchup.team1 : westFinalistMatchup.team2; %>
 
-                    <img class = 'westFinalistWinner' src="<%= `img/${westFinalistWinner}.png` %>" alt="">
+                    <img class = 'westFinalistWinner' src="<%= `img/${westFinalistWinner.toLowerCase()}.png` %>" alt="">
                     <div class = 'blank'>
                        
                     </div>
@@ -204,7 +204,7 @@
                 <% const finalsMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${eastFinalistWinner}` && item.team2 === `${westFinalistWinner}`) || (item.team1 === `${westFinalistWinner}` && item.team2 === `${eastFinalistWinner}`)) %>
                 <% const finalsChampion = finalsMatchup.team1Wins === '4' ? finalsMatchup.team1 : finalsMatchup.team2; %>
 
-                <img class = 'finalsChampion' src="<%= `img/${finalsChampion}.png` %>" alt="">
+                <img class = 'finalsChampion' src="<%= `img/${finalsChampion.toLowerCase()}.png` %>" alt="">
             </section>
             <section class="statsContainer">
                 <section id="stats" class="hidden">
@@ -238,7 +238,7 @@
                 
                 <section class = 'finalsEast '>
                             
-                    <img class = 'eastFinalistWinner' src="<%= `img/${eastFinalistWinner}.png` %>" alt="">
+                    <img class = 'eastFinalistWinner' src="<%= `img/${eastFinalistWinner.toLowerCase()}.png` %>" alt="">
                     <div class = 'blank'>
                     </div>
                     <div class = 'border'>
@@ -249,8 +249,8 @@
                     <div class = 'thirdEast eastFinal click3'>
                         <section class = 'matchupThird'>
                             
-                            <img class = 'east1st8th4th5thWinner' src="<%= `img/${east1st8th4th5thWinner}.png` %>" alt="">                            
-                            <img class = 'east2nd7th3rd6thWinner' src="<%= `img/${east2nd7th3rd6thWinner}.png` %>" alt="">
+                            <img class = 'east1st8th4th5thWinner' src="<%= `img/${east1st8th4th5thWinner.toLowerCase()}.png` %>" alt="">                            
+                            <img class = 'east2nd7th3rd6thWinner' src="<%= `img/${east2nd7th3rd6thWinner.toLowerCase()}.png` %>" alt="">
                         </section>
                     </div>
                 </section>
@@ -258,18 +258,18 @@
                     <div class = 'secondEast eastUpper click2'>
                         <section class = 'matchupSecond'>
                                 
-                            <img class = 'east1st8thWinner' src="<%= `img/${east1st8thWinner}.png` %>" alt="">
+                            <img class = 'east1st8thWinner' src="<%= `img/${east1st8thWinner.toLowerCase()}.png` %>" alt="">
                                 
-                            <img class = 'east4th5thWinner' src="<%= `img/${east4th5thWinner}.png` %>" alt="">
+                            <img class = 'east4th5thWinner' src="<%= `img/${east4th5thWinner.toLowerCase()}.png` %>" alt="">
                         </section>
                     </div>
                     <div class = 'secondEast eastLower click2'>
                         <section class = 'matchupSecond'>
                                 
-                            <img class = 'east2nd7thWinner' src="<%= `img/${east2nd7thWinner}.png` %>" alt="">
+                            <img class = 'east2nd7thWinner' src="<%= `img/${east2nd7thWinner.toLowerCase()}.png` %>" alt="">
                            
                                
-                            <img class = 'east3rd6thWinner' src="<%= `img/${east3rd6thWinner}.png` %>" alt="">
+                            <img class = 'east3rd6thWinner' src="<%= `img/${east3rd6thWinner.toLowerCase()}.png` %>" alt="">
                         </section>
                     </div>
                 </section>
@@ -278,7 +278,7 @@
                     <div class = 'firstEast eastOneEight click1' >
                         <section class = 'matchup'>
                             
-                                <img class='east1st' src="<%= `img/${east1st.collectionName.slice(0,3)}.png` %>" alt="">    
+                                <img class='east1st' src="<%= `img/${east1st.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">    
                             
                             <img class = 'east8th' src="<%= `img/${east8th.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">  
                         </section>
