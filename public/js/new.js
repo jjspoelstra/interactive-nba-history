@@ -1,14 +1,17 @@
+      let year = +window.location.pathname.split("/").pop().slice(0,4);
+
 
         document.querySelectorAll(`img`).forEach(image => {
-            const src = image.getAttribute('src').slice(4, 7);
+            const src = image.getAttribute('src').slice(12, 15);
             image.addEventListener("mouseover", () => showStats(src))
             image.addEventListener("mouseout", () => showStats(src))
         })
 
         async function showStats(src) {
             const stats = `${src.toUpperCase()}Stats`;
+            console.log(stats)
             try {
-              const response = await fetch(`/getData/${stats}`);
+              const response = await fetch(`/getData${year}/${stats}`);
               if (!response.ok) {
                 throw new Error(`HTTP error ${response.status}`);
               }
@@ -17,6 +20,7 @@
               const sortedData = filteredData.sort((a, b) => b.stats.ws - a.stats.ws);
               
               for (let i = 0; i <= 5; i++){
+                //document.querySelector('.record').innerText = this.data[0]?.record
                 document.querySelector(`.Players .player${i} .playerName`).innerText = sortedData[i].playerName
                 document.querySelector(`.Players .player${i} .gp`).innerText = `GP: ${sortedData[i].stats.games}`
                 document.querySelector(`.Players .player${i} .mpg`).innerText = `MPG: ${sortedData[i].stats.mpg}`

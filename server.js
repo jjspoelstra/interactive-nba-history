@@ -29,7 +29,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     const createYearRoute = (year) => {
       app.get(`/${year}`, async (req, res) => {
         const db = client.db(`stats_${year}`);
-
+        
         try {
           const collectionNames = await db.listCollections().toArray();
           const dataPromises = collectionNames.map(({ name }) =>
@@ -40,24 +40,24 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
             }))
           );
           const data = await Promise.all(dataPromises);
-
           // Render data using EJS template
-          res.render('index.ejs', { info: data });
+          res.render('index.ejs', { info: data, imagePath: `img${year}` });
         } catch (error) {
           console.error(error);
           res.status(500).send('Error retrieving data from database');
         }
       });
 
-      app.get('/getData/:stats', async (req, res) => {
+      app.get(`/getData${year}/:stats`, async (req, res) => {
         const db = client.db(`stats_${year}`);
         const stats = req.params.stats;
         const data = await db.collection(stats).find().toArray();
         res.json(data);
       });
     };
+    
 
-    for (let year = 2015; year <= 2022; year++) {
+    for (let year = 1984; year <= 2022; year++) {
       createYearRoute(year);
     }
   })

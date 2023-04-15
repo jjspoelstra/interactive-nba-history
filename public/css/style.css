@@ -38,7 +38,7 @@ button {
   color: hsl(190deg, 10%, 95%);
   
   box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);
-  transfrom: translateY(0);
+  transform: translateY(0);
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -74,6 +74,11 @@ button {
 /* BASE STYLES
 /*******************************************/
 
+.year {
+  font-weight: bolder;
+  font-size: large;
+}
+
 img, footer img {
   height: 4rem;
   width: fit-content;
@@ -84,8 +89,9 @@ footer img {
   height: 3rem;
 }
 
-img:hover, footer img:hover {
+img:hover {
   height: 4.5rem;
+  width: fit-content
 }
 
 footer img:hover {
