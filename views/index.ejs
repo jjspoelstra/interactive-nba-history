@@ -78,30 +78,55 @@
                   <% } %>
 
 
+
+
+                  <% const west1st = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '1st')); %>
+                  <% const west4th = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '4th')); %>
+                  <% const west5th = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '5th')); %>
+                  <% const west2nd = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '2nd')); %>
+                  <% const west3rd = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '3rd')); %>
+                  <% const west6th = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '6th')); %>
+
+                  <% const west1st8thMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west1st.collectionName.slice(0,3)}` && item.team2 === `${west8th.collectionName.slice(0,3)}`) || (item.team2 === `${west1st.collectionName.slice(0,3)}` && item.team1 === `${west8th.collectionName.slice(0,3)}`)) %>
+                  <% const west1st8thWinner = west1st8thMatchup.team1Wins === '4' ? west1st8thMatchup.team1 : west1st8thMatchup.team2Wins; %>
+                  <% const west4th5thMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west4th.collectionName.slice(0,3)}` && item.team2 === `${west5th.collectionName.slice(0,3)}`) || (item.team2 === `${west4th.collectionName.slice(0,3)}` && item.team1 === `${west5th.collectionName.slice(0,3)}`)) %>
+                  <% const west4th5thWinner = west4th5thMatchup.team1Wins === '4' ? west4th5thMatchup.team1 : west4th5thMatchup.team2Wins; %>
+                  <% const west2nd7thMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west2nd.collectionName.slice(0,3)}` && item.team2 === `${west7th.collectionName.slice(0,3)}`) || (item.team1 === `${west7th.collectionName.slice(0,3)}` && item.team2 === `${west2nd.collectionName.slice(0,3)}`)) %>
+                  <% const west2nd7thWinner = west2nd7thMatchup.team1Wins === '4' ? west2nd7thMatchup.team1 : west2nd7thMatchup.team2Wins; %>
+                  <% const west3rd6thMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west3rd.collectionName.slice(0,3)}` && item.team2 === `${west6th.collectionName.slice(0,3)}`) || (item.team1 === `${west6th.collectionName.slice(0,3)}` && item.team2 === `${west3rd.collectionName.slice(0,3)}`)) %>
+                 
+                  <% const west3rd6thWinner = west3rd6thMatchup.team1Wins === '4' ? west3rd6thMatchup.team1 : west3rd6thMatchup.team2; %>
             
 
             <section class = 'conference west'>
                 <section class = 'firstRound left top'>
                     <div class = 'firstLeft westOneEight click1' >  
                         <section class = 'matchupWest top'>
-                            <% const west1st = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '1st')); %>
-                                <img class='west1st' src="<%= `img/${imagePath}/${west1st.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">    
                             
+                            
+                            <img class='west1st' src="<%= `img/${imagePath}/${west1st.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">    
+                            
+                            <section class = gamesPlayed>
+                                <% for (let i = 0; i < west1st8thMatchup.gameScores.length; i++) { %>
+                                    <span class="game<%=i+1%> game">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                               <% } %>   
+                            </section>
+
                             <img class = 'west8th' src="<%= `img/${imagePath}/${west8th.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">     
                             
                         </section>
                     </div>
                     <div class = 'firstLeft westFourFive click1'>
                         <section class = 'matchupWest'>
-                            <% const west4th = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '4th')); %>
+                           
                             <img class='west4th' src="<%= `img/${imagePath}/${west4th.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">    
-                            <% const west5th = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '5th')); %>
+                           
                             <img class = 'west5th' src="<%= `img/${imagePath}/${west5th.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">   
                         <section>
                     </div>
                     <div class = 'firstLeft westTwoSeven click1'>
                         <section class = 'matchupWest'>
-                            <% const west2nd = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '2nd')); %>
+                            
                             <img class='west2nd' src="<%= `img/${imagePath}/${west2nd.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">    
                             
                             <img class = 'west7th' src="<%= `img/${imagePath}/${west7th.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">    
@@ -109,9 +134,9 @@
                     </div>
                     <div class = 'firstLeft westThreeSix click1'>
                         <section class = 'matchupWest'>
-                            <% const west3rd = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '3rd')); %>
+                            
                             <img class='west3rd' src="<%= `img/${imagePath}/${west3rd.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">    
-                            <% const west6th = info.find(collection => collection.data.some(item => item.conference === 'west' && item.seed === '6th')); %>
+                            
                             <img class = 'west6th' src="<%= `img/${imagePath}/${west6th.collectionName.slice(0,3).toLowerCase()}.png` %>" alt="">   
                         </section>
                     </div>
@@ -120,15 +145,7 @@
                 <section class = 'secondRound left'>
 
 
-                    <% const west1st8thMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west1st.collectionName.slice(0,3)}` && item.team2 === `${west8th.collectionName.slice(0,3)}`) || (item.team2 === `${west1st.collectionName.slice(0,3)}` && item.team1 === `${west8th.collectionName.slice(0,3)}`)) %>
-                    <% const west1st8thWinner = west1st8thMatchup.team1Wins === '4' ? west1st8thMatchup.team1 : west1st8thMatchup.team2Wins; %>
-                    <% const west4th5thMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west4th.collectionName.slice(0,3)}` && item.team2 === `${west5th.collectionName.slice(0,3)}`) || (item.team2 === `${west4th.collectionName.slice(0,3)}` && item.team1 === `${west5th.collectionName.slice(0,3)}`)) %>
-                    <% const west4th5thWinner = west4th5thMatchup.team1Wins === '4' ? west4th5thMatchup.team1 : west4th5thMatchup.team2Wins; %>
-                    <% const west2nd7thMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west2nd.collectionName.slice(0,3)}` && item.team2 === `${west7th.collectionName.slice(0,3)}`) || (item.team1 === `${west7th.collectionName.slice(0,3)}` && item.team2 === `${west2nd.collectionName.slice(0,3)}`)) %>
-                    <% const west2nd7thWinner = west2nd7thMatchup.team1Wins === '4' ? west2nd7thMatchup.team1 : west2nd7thMatchup.team2Wins; %>
-                    <% const west3rd6thMatchup = playoffMatchups[0].data.find(item => (item.team1 === `${west3rd.collectionName.slice(0,3)}` && item.team2 === `${west6th.collectionName.slice(0,3)}`) || (item.team1 === `${west6th.collectionName.slice(0,3)}` && item.team2 === `${west3rd.collectionName.slice(0,3)}`)) %>
                    
-                    <% const west3rd6thWinner = west3rd6thMatchup.team1Wins === '4' ? west3rd6thMatchup.team1 : west3rd6thMatchup.team2; %>
 
                     <div class = 'secondLeft westUpper click2'>
                         <section class = 'matchupSecondWest'>

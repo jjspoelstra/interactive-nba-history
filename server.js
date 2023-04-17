@@ -39,7 +39,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
               pageYear: year,
             }))
           );
-          const data = await Promise.all(dataPromises);
+          const data = await Promise.all(dataPromises); 
           // Render data using EJS template
           res.render('index.ejs', { info: data, imagePath: `img${year}` });
         } catch (error) {
@@ -54,6 +54,9 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
         const data = await db.collection(stats).find().toArray();
         res.json(data);
       });
+
+
+      
     };
     
 
@@ -66,3 +69,5 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+

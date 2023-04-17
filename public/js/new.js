@@ -1,3 +1,4 @@
+
       let year = +window.location.pathname.split("/").pop().slice(0,4);
 
 
@@ -44,6 +45,13 @@
             document.querySelector('#stats').classList.toggle('hidden')
           }
 
+         
+
+
+
+
+
+          
         
 
 

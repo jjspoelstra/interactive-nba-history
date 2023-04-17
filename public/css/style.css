@@ -81,7 +81,7 @@ button {
 
 img, footer img {
   height: 4rem;
-  width: fit-content;
+  width: auto;
   transition: height .1s linear;
 }
 
@@ -236,11 +236,15 @@ main {
 
 .matchup img, .matchupWest img, .matchupSecond img, .matchupSecondWest img, .matchupThird img, .matchupThirdWest img {
   display: block;
+  height: 4rem;
+  width: auto;
+  transition: height .1s linear;
 }
 
 .matchup img, .matchupWest img, .matchupSecond img, .matchupSecondWest img, .matchupThird img, .matchupThirdWest img {
   height: 4rem;
-  width: fit-content;
+  width: auto;
+  transition: height .1s linear;
 }
 
 @media (max-width: 1200px) {
