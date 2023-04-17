@@ -91,7 +91,8 @@ footer img {
 
 img:hover {
   height: 4.5rem;
-  width: fit-content
+  width: auto;
+  transition: height .1s linear;
 }
 
 footer img:hover {
@@ -241,11 +242,14 @@ main {
   transition: height .1s linear;
 }
 
-.matchup img, .matchupWest img, .matchupSecond img, .matchupSecondWest img, .matchupThird img, .matchupThirdWest img {
-  height: 4rem;
+.matchup img:hover, .matchupWest img:hover, .matchupSecond img:hover, .matchupSecondWest img:hover, .matchupThird img:hover, .matchupThirdWest img:hover {
+  display: block;
+  height: 4.5rem;
   width: auto;
   transition: height .1s linear;
 }
+
+
 
 @media (max-width: 1200px) {
   /* CSS rules for 1200px */
