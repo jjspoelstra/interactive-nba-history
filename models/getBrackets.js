@@ -4,27 +4,19 @@ const mongoose = require('mongoose');
 module.exports = {
     GetTeamStats: async (year) => {
         const db = mongoose.connection.useDb(`stats_${year}`);
-        const teamSchema = new mongoose.Schema({
-            conference: String,
-            record: String,
-            seed: String,
-        });
-        const TeamData = await db.model('TeamData', teamSchema).find();
-        console.log(TeamData)
-    },
-
-    GetPlayoffStats: async (year) => {
-        const db = mongoose.connection.useDb(`stats_${year}`);
-  
-        const playoffSchema = new mongoose.Schema({
-            round: String,
-            team1: String,
-            team2: String,
-            team1Wins: String,
-            team2Wins: String,
-            gameScores: [Array],
-        });
-        const PlayoffData = db.model('PlayoffData', playoffSchema)
-        //console.log(db.model('PlayoffData', playoffSchema))
-    }
-}
+      
+        // Retrieve all collection names in the database
+        const collectionNames = await db.db.listCollections().toArray();
+        
+        const collections = collectionNames.map(({name}) => name);
+        collections.sort()
+        // Iterate over the list of collections and retrieve the documents in each one
+        let docs = []
+        for (const collectionName of collections) {
+          const collection = db.collection(collectionName) 
+          docs.push(await collection.find({}).toArray())
+        }
+        return { docs, collections }
+        //
+      }
+}      

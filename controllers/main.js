@@ -1,5 +1,5 @@
 module.exports = {
     getMain: (req, res) => {
-        res.sendFile(__dirname + '/index.html')
+        res.render('main.ejs')
     },
   };
