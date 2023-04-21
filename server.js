@@ -3,7 +3,7 @@ const app = express();
 const connectDB = require('./config/database');
 const main = require('./routes/main')
 const bracketRoutes = require('./routes/brackets');
-//const dataRoutes = require('./routes/data');
+const dataRoutes = require('./routes/data');
 
 
 require('dotenv').config({ path: './config/.env' });
@@ -20,7 +20,7 @@ app.use(express.json())
 
 app.use('/', main)
 app.use(`/year`, bracketRoutes);
-  //app.use(`/getData${year}/:stats`, dataRoutes);
+app.use(`/getData`, dataRoutes);
 
 
 

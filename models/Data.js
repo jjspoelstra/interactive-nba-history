@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
 
+module.exports = {
+    GetTeamStats: async (year, stats) => {
+        const db = mongoose.connection.useDb(`stats_${year}`);
 
-const teamSchema = new mongoose.Schema({
-    conference: String,
-    record: String,
-    seed: String
-});
-
-
-module.exports = mongoose.model('GetData', teamSchema);
+        const collection = db.collection(stats).find({}).toArray() 
+        return collection
+        }
+}      

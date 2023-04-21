@@ -3,7 +3,7 @@
 
 
         document.querySelectorAll(`img`).forEach(image => {
-            const src = image.getAttribute('src').slice(12, 15);
+            const src = image.getAttribute('src').slice(15, 18);
             image.addEventListener("mouseover", () => showStats(src))
             image.addEventListener("mouseout", () => showStats(src))
         })
@@ -12,7 +12,7 @@
             const stats = `${src.toUpperCase()}Stats`;
             console.log(stats)
             try {
-              const response = await fetch(`/getData${year}/${stats}`);
+              const response = await fetch(`/getData/${year}/${stats}`);
               if (!response.ok) {
                 throw new Error(`HTTP error ${response.status}`);
               }
