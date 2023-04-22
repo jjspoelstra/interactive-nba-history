@@ -13,6 +13,13 @@
      height: 0;
 }
 
+.big{
+  position: absolute;
+  transform: translate(930px, 150px);
+  font-size: xx-large;
+  font-weight: 900;
+}
+
 body{
   font-family: 'Roboto', sans-serif;
 }

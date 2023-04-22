@@ -8,7 +8,7 @@ module.exports = {
         console.log(year)
         const { docs: data, collections } = await getData.GetTeamStats(year)
         
-        res.render('index.ejs', { info: data, teamNames: collections, imagePath: `img${year}`, pageYear: year }); // imagePath: `img${year}` 
+        res.render('index.ejs', { info: data, teamNames: collections, imagePath: `img${year}`, pageYear: year }); 
     } catch (err) {
       console.log(err);
     }
