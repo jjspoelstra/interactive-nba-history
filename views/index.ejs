@@ -415,8 +415,9 @@
                 <% const west14th = info.find(collection => collection.some(item => item.conference === 'west' && item.seed === '14th')); %>
                 <% const west14thName = teamNames[info.indexOf(west14th)].slice(0,3) %>
                 <% const west15th = info.find(collection => collection.some(item => item.conference === 'west' && item.seed === '15th')); %>
+                <% let west15thName %>
                 <% if (west15th){ %>
-                    <% const west15thName =  teamNames[info.indexOf(west15th)].slice(0,3)  %>
+                    <% west15thName =  teamNames[info.indexOf(west15th)].slice(0,3)  %>
                 <% } else { west15thName = ''} %>
                 <section class = 'Playin'>
                     <img class = 'west9th' src="<%= `../img/${imagePath}/${west9thName.toLowerCase()}.png` %>" alt="">
