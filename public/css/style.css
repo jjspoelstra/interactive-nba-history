@@ -379,7 +379,7 @@ footer {
 
 #stats{
   position: absolute;
-  transform: translate(-55.5%, 5%);
+  transform: translate(-55.5%, 140%);
   border-radius: 40px;
   height: 320px;
   width: 800px;
@@ -411,8 +411,8 @@ footer {
 /* base gameWon styles */
 /* CHANGE TO RELATIVE */
 .game{
-  width: fit-content;
-  position: absolute;
+  width: 50%;
+  position: relative;
   z-index: 1;
 }
 .east .game{
@@ -420,56 +420,80 @@ footer {
   z-index: 1;
 }
 
+.east .gamesPlayed{
+  transform: scaleX(-1)
+}
+
+.east .toolTipText{
+  transform: scaleX(-1)
+}
+
 /* west 1st round */
 .topSeedWin1 {
-  transform: translate(60px, 5px);
+  top: -30px;
+  left: 95px
 }
 .lowSeedWin1{
-  transform: translate(60px, 65px);
+  top: 30px;
+  left: 95px
 }
 .topSeedWin2{
-  transform: translate(75px, 5px);
+  top: -30px;
+  left: 95px
 }
 .lowSeedWin2{
-  transform: translate(75px, 65px);
+  top: 30px;
+  left: 95px
 }
 .topSeedWin3{
-  transform: translate(90px, 5px);
+  top: -30px;
+  left: 95px
 }
 .lowSeedWin3{
-  transform: translate(90px, 65px);
+  top: 30px;
+  left: 95px
 }
 .topSeedWin4{
-  transform: translate(105px, 5px);
+  top: -30px;
+  left: 95px
 }
 .lowSeedWin4{
-  transform: translate(105px, 65px);
+  top: 30px;
+  left: 95px
 }
 
 /* east 1st round */
 .east .topSeedWin1 {
-  transform: translate(135px, 5px);
+  top: -30px;
+  left: 95px
 }
 .east .lowSeedWin1{
-  transform: translate(135px, 65px);
+  top: 30px;
+  left: 95px
 }
 .east .topSeedWin2{
-  transform: translate(120px, 5px);
+  top: -30px;
+  left: 95px
 }
 .east .lowSeedWin2{
-  transform: translate(120px, 65px);
+  top: 30px;
+  left: 95px
 }
 .east .topSeedWin3{
-  transform: translate(105px, 5px);
+  top: -30px;
+  left: 95px
 }
 .east .lowSeedWin3{
-  transform: translate(105px, 65px);
+  top: 30px;
+  left: 95px
 }
 .east .topSeedWin4{
-  transform: translate(90px, 5px);
+  top: -30px;
+  left: 95px
 }
 .east .lowSeedWin4{
-  transform: translate(90px, 65px);
+  top: 30px;
+  left: 95px
 }
 
 /* west 2nd round */
