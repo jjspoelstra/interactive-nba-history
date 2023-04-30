@@ -89,6 +89,7 @@ button {
 img, footer img {
   height: 4rem;
   width: auto;
+  max-width: 9rem;
   transition: height .1s linear;
 }
 
@@ -99,7 +100,9 @@ footer img {
 img:hover {
   height: 4.5rem;
   width: auto;
+  max-width: 10rem;
   transition: height .1s linear;
+
 }
 
 footer img:hover {

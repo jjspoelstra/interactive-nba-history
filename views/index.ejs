@@ -19,7 +19,7 @@
       <% const year = pageYear %>
       <span class = 'big'> <%= `${year}` %> </span>
 
-      <% for (let i = 2002; i <= 2022; i++){ %>
+      <% for (let i = 1991; i <= 2022; i++){ %>
         <button><a href="<%= i %>"> <%= `${i}` %> </a></button>
       <% } %>
         <!-- <button class = advance>advance</button> -->
@@ -704,7 +704,11 @@
                 <% const west13th = info.find(collection => collection.some(item => item.conference === 'west' && item.seed === '13th')); %>
                 <% const west13thName = teamNames[info.indexOf(west13th)].slice(0,3) %>
                 <% const west14th = info.find(collection => collection.some(item => item.conference === 'west' && item.seed === '14th')); %>
-                <% const west14thName = teamNames[info.indexOf(west14th)].slice(0,3) %>
+                
+                <% if (west14th){ %>
+                    <% west14thName =  teamNames[info.indexOf(west14th)].slice(0,3)  %>
+                <% } else { west14thName = ''} %>
+
                 <% const west15th = info.find(collection => collection.some(item => item.conference === 'west' && item.seed === '15th')); %>
                 <% let west15thName %>
                 <% if (west15th){ %>
@@ -735,10 +739,17 @@
                 <% const east12thName = teamNames[info.indexOf(east12th)].slice(0,3) %>
                 <% const east13th = info.find(collection => collection.some(item => item.conference === 'east' && item.seed === '13th')); %>
                 <% const east13thName = teamNames[info.indexOf(east13th)].slice(0,3) %>
+
                 <% const east14th = info.find(collection => collection.some(item => item.conference === 'east' && item.seed === '14th')); %>
-                <% const east14thName = teamNames[info.indexOf(east14th)].slice(0,3) %>
+                <% if (east14th){ %>
+                    <% east14thName =  teamNames[info.indexOf(east14th)].slice(0,3)  %>
+                <% } else { east14thName = ''} %>
+
                 <% const east15th = info.find(collection => collection.some(item => item.conference === 'east' && item.seed === '15th')); %>
-                <% const east15thName =  teamNames[info.indexOf(east15th)].slice(0,3)  %>
+                <% let east15thName %>
+                <% if (east15th){ %>
+                    <% east15thName =  teamNames[info.indexOf(east15th)].slice(0,3)  %>
+                <% } else { east15thName = ''} %>
                 
                 
                 
