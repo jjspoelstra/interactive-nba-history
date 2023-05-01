@@ -3,7 +3,7 @@
 
 
         document.querySelectorAll(`img`).forEach(image => {
-            const src = image.getAttribute('src').slice(15, 18);
+            const src = image.getAttribute('src').slice(-7, -4);
             image.addEventListener("mouseover", () => showStats(src))
             image.addEventListener("mouseout", () => showStats(src))
         })
