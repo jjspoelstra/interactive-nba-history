@@ -15,41 +15,55 @@
 		<link rel="stylesheet" href="../css/style.css">
 	</head>
 	<body >
+        <% const year = pageYear %>
         
-      <% const year = pageYear %>
-      <span class = 'big'> <%= `${year}` %> </span>
+        <header class="">
+            <nav class="flex">
+                <section class="flex">
+                    <a href="/" class="-m-1.5 p-1.5">
+                      <span class="sr-only">An Interactive History of the NBA</span>
+                    </a>
+                </section>
+                
+                <section class="flex">
+                    <div class="dropdown">
+                        <button class="dropbtn">Brackets</button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <% for (let i = 2022; i >= 1991; i--){ %>
+                            <a href="<%= i %>"> <%= `${i}` %> </a>
+                          <% } %>
+                          <!-- Add more items as needed -->
+                        </div>
+                    </div>
+        
+                    <div class="flex">
+                        <button class="dropbtn"><a href="<%= `${+year-1}` %>">prev</a></button>
+                        <span class = 'year'> <%= `${year}` %> </span>
+                        <button class="dropbtn"><a href="<%= `${+year+1}` %>">next</a></button>
+                    </div>
+                </section>
 
-      <% for (let i = 1991; i <= 2022; i++){ %>
-        <button><a href="<%= i %>"> <%= `${i}` %> </a></button>
-      <% } %>
-        <!-- <button class = advance>advance</button> -->
-        <button><a href="<%= `${+year-1}` %>">prev</a></button>
-        <span class = 'year'> <%= `${year}` %> </span>
-        <button><a href="<%= `${+year+1}` %>">next</a></button>
+                <section class="flex">
+                    <a href="/" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Contact</span>
+                      </a>
+                </section>
+            </nav>
+        </header>
+        
+          
+
+
+      
+      
+
+      
+        
+        
         <main >
-
-            
             <% const playoffMatchups = info[info.length - 1] %>
 
-            
-
-            <!-- accounting for play-in -->
-            
-                
-
-                <!-- accounting for play-in -->
-             
-                  
-                
-
-            
-                  
-                
-
-                
-                   
-                 
-
+        
 
 <!-- establishing array for each team, and the teamname associated with them -->
 
@@ -106,9 +120,7 @@
 
            
 
-   <!-- establishing the matchups and their winners -->               
-
-                  
+   <!-- establishing the matchups and their winners -->                           
 
                   <% const west1st8thMatchup = playoffMatchups.find(item => (item.team1 === west1stName && item.team2 === west8thName) || (item.team2 === west1stName && item.team1 === west8thName)) %>
     <% const west1st8thWinner = west1st8thMatchup.team1Wins > west1st8thMatchup.team2Wins ? west1st8thMatchup.team1 : west1st8thMatchup.team2Wins; %>
@@ -387,6 +399,8 @@
         
     <% const east1st8thMatchup = playoffMatchups.find(item => (item.team1 === east1stName && item.team2 === east8thName) || (item.team2 === east1stName && item.team1 === east8thName)) %>
     <% const east1st8thWinner = east1st8thMatchup.team1Wins > east1st8thMatchup.team2Wins ? east1st8thMatchup.team1 : east1st8thMatchup.team2Wins; %>
+
+    <% console.log(east1st8thMatchup) %>
 
     <% const east4th5thMatchup = playoffMatchups.find(item => (item.team1 === east4thName && item.team2 === east5thName) || (item.team2 === east4thName && item.team1 === east5thName)) %>
     <% const east4th5thWinner = east4th5thMatchup.team1Wins > east4th5thMatchup.team2Wins ? east4th5thMatchup.team1 : east4th5thMatchup.team2Wins; %>
