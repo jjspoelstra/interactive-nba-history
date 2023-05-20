@@ -1,5 +1,11 @@
 
+      
+
       let year = +window.location.pathname.split("/").pop().slice(0,4);
+
+    document.querySelectorAll('.game').forEach(game => {
+      game.classList.toggle('hidden')
+    })
 
 
         document.querySelectorAll(`img`).forEach(image => {
@@ -90,5 +96,30 @@ window.onclick = function(event) {
         
 
 
+document.querySelector('.advance').addEventListener('click', advance)
+let clicks = 0
 
+function advance(){
+    clicks++
+    if (clicks < 8){
+        document.querySelectorAll(`.firstRound .game${clicks }`).forEach(item => {
+            item.classList.toggle('hidden')
+        }) 
+    }
+    else if (clicks < 15){
+        document.querySelectorAll(`.click2 .game${clicks - 7}`).forEach(item => {
+            item.classList.toggle('hidden')
+        }) 
+    }
+    else if (clicks < 22){
+        document.querySelectorAll(`.click3 .game${clicks - 14}`).forEach(item => {
+            item.classList.toggle('hidden')
+        }) 
+    }
+    else {
+        document.querySelectorAll(`.click4 .game${clicks - 22}`).forEach(item => {
+            item.classList.toggle('hidden')
+        }) 
+    }
+}
 

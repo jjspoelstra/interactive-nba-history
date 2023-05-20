@@ -348,6 +348,8 @@ main {
 .champion {
   transform: translate(25%, 30%);
   width: 5%;
+  max-height: 400px;
+  justify-content: center;
 }
 
 /* teams */
@@ -414,7 +416,7 @@ footer {
 /* CHANGE TO RELATIVE */
 .game{
   width: 50%;
-  position: relative;
+  position: absolute;
   z-index: 1;
 }
 .east .game{
@@ -431,176 +433,161 @@ footer {
 }
 
 /* west 1st round */
+/* west 1st round */
 .topSeedWin1 {
-  top: -30px;
-  left: 95px
+  transform: translate(65px, -40px);
 }
 .lowSeedWin1{
-  top: 30px;
-  left: 95px
+  transform: translate(65px, 25px);
 }
 .topSeedWin2{
-  top: -30px;
-  left: 95px
+  transform: translate(80px, -40px);
 }
 .lowSeedWin2{
-  top: 30px;
-  left: 95px
+  transform: translate(80px, 25px);
 }
 .topSeedWin3{
-  top: -30px;
-  left: 95px
+  transform: translate(95px, -40px);
 }
 .lowSeedWin3{
-  top: 30px;
-  left: 95px
+  transform: translate(95px, 25px);
 }
 .topSeedWin4{
-  top: -30px;
-  left: 95px
+  transform: translate(110px, -40px);
 }
 .lowSeedWin4{
-  top: 30px;
-  left: 95px
+  transform: translate(110px, 25px);
 }
 
 /* east 1st round */
 .east .topSeedWin1 {
-  top: -30px;
-  left: 95px
+  transform: translate(50px, -40px);
 }
 .east .lowSeedWin1{
-  top: 30px;
-  left: 95px
+  transform: translate(50px, 25px);
 }
 .east .topSeedWin2{
-  top: -30px;
-  left: 95px
+  transform: translate(65px, -40px);
 }
 .east .lowSeedWin2{
-  top: 30px;
-  left: 95px
+  transform: translate(65px, 25px);
 }
 .east .topSeedWin3{
-  top: -30px;
-  left: 95px
+  transform: translate(80px, -40px);
 }
 .east .lowSeedWin3{
-  top: 30px;
-  left: 95px
+  transform: translate(80px, 25px);
 }
 .east .topSeedWin4{
-  top: -30px;
-  left: 95px
+  transform: translate(95px, -40px);
 }
 .east .lowSeedWin4{
-  top: 30px;
-  left: 95px
+  transform: translate(95px, 25px);
 }
 
 /* west 2nd round */
 .westUpper .topSeedWin1, .westLower .topSeedWin1 {
-  transform: translate(50px, 5px);
+  transform: translate(50px, -80px);
 }
 .westUpper .lowSeedWin1, .westLower .lowSeedWin1{
-  transform: translate(50px, 145px);
+  transform: translate(50px, 60px);
 }
 .westUpper .topSeedWin2, .westLower .topSeedWin2{
-  transform: translate(65px, 5px);
+  transform: translate(65px, -80px);
 }
 .westUpper .lowSeedWin2, .westLower .lowSeedWin2{
-  transform: translate(65px, 145px);
+  transform: translate(65px, 60px);
 }
 .westUpper .topSeedWin3, .westLower .topSeedWin3{
-  transform: translate(80px, 5px);
+  transform: translate(80px, -80px);
 }
 .westUpper .lowSeedWin3, .westLower .lowSeedWin3{
-  transform: translate(80px, 145px);
+  transform: translate(80px, 60px);
 }
 .westUpper .topSeedWin4, .westLower .topSeedWin4{
-  transform: translate(95px, 5px);
+  transform: translate(95px, -80px);
 }
 .westUpper .lowSeedWin4, .westLower .lowSeedWin4{
-  transform: translate(95px, 145px);
+  transform: translate(95px, 60px);
 }
 
 /* east 2nd round */
 .eastUpper .topSeedWin1 , .eastLower .topSeedWin1{
-  transform: translate(135px, 5px);
+  transform: translate(50px, -80px);
 }
 .eastUpper .lowSeedWin1, .eastLower .lowSeedWin1{
-  transform: translate(135px, 145px);
+  transform: translate(50px, 60px);
 }
 .eastUpper .topSeedWin2, .eastLower .topSeedWin2{
-  transform: translate(120px, 5px);
+  transform: translate(65px, -80px);
 }
 .eastUpper .lowSeedWin2, .eastLower .lowSeedWin2{
-  transform: translate(120px, 145px);
+  transform: translate(65px, 60px);
 }
 .eastUpper .topSeedWin3, .eastLower .topSeedWin3{
-  transform: translate(105px, 5px);
+  transform: translate(80px, -80px);
 }
 .eastUpper .lowSeedWin3, .eastLower .lowSeedWin3{
-  transform: translate(105px, 145px);
+  transform: translate(80px, 60px);
 }
 .eastUpper .topSeedWin4, .eastLower .topSeedWin4{
-  transform: translate(90px, 5px);
+  transform: translate(95px, -80px);
 }
 .eastUpper .lowSeedWin4, .eastLower .lowSeedWin4{
-  transform: translate(90px, 145px);
+  transform: translate(95px, 60px);
 }
 
 /* west finals  */
 
 .westFinal .topSeedWin1 {
-  transform: translate(60px, 5px);
+  transform: translate(60px, -180px);
 }
 .westFinal .lowSeedWin1{
-  transform: translate(60px, 340px);
+  transform: translate(60px, 160px);
 }
 .westFinal .topSeedWin2{
-  transform: translate(75px, 5px);
+  transform: translate(75px, -180px);
 }
 .westFinal .lowSeedWin2{
-  transform: translate(75px, 340px);
+  transform: translate(75px, 160px);
 }
 .westFinal .topSeedWin3{
-  transform: translate(90px, 5px);
+  transform: translate(90px, -180px);
 }
 .westFinal .lowSeedWin3{
-  transform: translate(90px, 340px);
+  transform: translate(90px, 160px);
 }
 .westFinal .topSeedWin4{
-  transform: translate(105px, 5px);
+  transform: translate(105px, -180px);
 }
 .westFinal .lowSeedWin4{
-  transform: translate(105px, 340px);
+  transform: translate(105px, 160px);
 }
 
 /* east finals */
 .eastFinal .topSeedWin1 {
-  transform: translate(140px, 5px);
+  transform: translate(55px, -180px);
 }
 .eastFinal .lowSeedWin1{
-  transform: translate(140px, 340px);
+  transform: translate(55px, 160px);
 }
 .eastFinal .topSeedWin2{
-  transform: translate(125px, 5px);
+  transform: translate(70px, -180px);
 }
 .eastFinal .lowSeedWin2{
-  transform: translate(125px, 340px);
+  transform: translate(70px, 160px);
 }
 .eastFinal .topSeedWin3{
-  transform: translate(110px, 5px);
+  transform: translate(85px, -180px);
 }
 .eastFinal .lowSeedWin3{
-  transform: translate(110px, 340px);
+  transform: translate(85px, 160px);
 }
 .eastFinal .topSeedWin4{
-  transform: translate(95px, 5px);
+  transform: translate(100px, -180px);
 }
 .eastFinal .lowSeedWin4{
-  transform: translate(95px, 340px);
+  transform: translate(100px, 160px);
 }
 
 

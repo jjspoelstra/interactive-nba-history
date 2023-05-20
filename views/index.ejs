@@ -58,7 +58,7 @@
       
 
       
-        
+        <section class="advance"><button>Advance</button></section>
         
         <main >
             <% const playoffMatchups = info[info.length - 1] %>
@@ -146,22 +146,24 @@
                             <section class = gamesPlayed>
                                 <% let topSeedWins = 0 %>
                                 <% let lowSeedWins = 0 %>
+                                
                                 <% for (let i = 0; i < west1st8thMatchup.gameScores.length; i++) { %>
-                                    <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
+                                    <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that the home team in these games is the "top"-->
                                         <% if (+west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
+                                            <% console.log(west1st8thMatchup) %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west1st8thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west1st8thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west1st8thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west1st8thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %>
                                <% } %>   
@@ -184,18 +186,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west4th5thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west4th5thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west4th5thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west4th5thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %> 
                                     <% } %> 
@@ -216,18 +218,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west2nd7thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west2nd7thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west2nd7thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west2nd7thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %> 
                                     <% } %>    
@@ -248,18 +250,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west3rd6thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west3rd6thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west3rd6thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west3rd6thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %> 
                                     <% } %>  
@@ -288,18 +290,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west1st8th4th5thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west1st8th4th5thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west1st8th4th5thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west1st8th4th5thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %> 
                                     <% } %>  
@@ -317,18 +319,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west2nd7th3rd6thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=west2nd7th3rd6thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west2nd7th3rd6thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=west2nd7th3rd6thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${west2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${west2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %> 
                                     <% } %>  
@@ -354,18 +356,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim() > +westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=westFinalistMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=westFinalistMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim() > +westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=westFinalistMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=westFinalistMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${westFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${westFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %> 
                                     <% } %>  
@@ -482,18 +484,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim() > +eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=eastFinalistMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=eastFinalistMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim() > +eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=eastFinalistMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=eastFinalistMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${eastFinalistMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${eastFinalistMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %> 
                                     <% } %>  
@@ -516,18 +518,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=east1st8th4th5thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=east1st8th4th5thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east1st8th4th5thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east1st8th4th5thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8th4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8th4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %>
                                <% } %>     
@@ -548,18 +550,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=east2nd7th3rd6thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=east2nd7th3rd6thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east2nd7th3rd6thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east2nd7th3rd6thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7th3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7th3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %>
                                <% } %>     
@@ -583,18 +585,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=east1st8thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=east1st8thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east1st8thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east1st8thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east1st8thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east1st8thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %>
                                <% } %>     
@@ -615,18 +617,18 @@
                                     <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                         <% if (+east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                             <% topSeedWins = topSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=east4th5thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <%lowSeedWins = lowSeedWins + 1 %>
-                                            <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                            <span class="game<%=i+1%> game <%=east4th5thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } %>
                                         <% } else { %>
                                             <% if (+east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east4th5thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% } else { %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east4th5thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east4th5thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east4th5thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                             <% }   %>  
                                         <% } %>
                                <% } %>       
@@ -647,18 +649,18 @@
                                         <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                             <% if (+east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east2nd7thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                                 <% } else { %>
                                                     <%lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east2nd7thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                                 <% } %>
                                             <% } else { %>
                                                 <% if (+east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                     <% lowSeedWins = lowSeedWins + 1 %>
-                                                    <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                    <span class="game<%=i+1%> game <%=east2nd7thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                                 <% } else { %>
                                                     <% topSeedWins = topSeedWins + 1 %>
-                                                    <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                    <span class="game<%=i+1%> game <%=east2nd7thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east2nd7thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east2nd7thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                                 <% }   %>  
                                             <% } %>
                                    <% } %>      
@@ -679,18 +681,18 @@
                                         <% if (i == 0 || i == 1 || i == 4 || i == 6){ %>   <!-- make sure that -->
                                             <% if (+east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                 <% topSeedWins = topSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east3rd6thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                                 <% } else { %>
                                                     <%lowSeedWins = lowSeedWins + 1 %>
-                                                <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                <span class="game<%=i+1%> game <%=east3rd6thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                                 <% } %>
                                             <% } else { %>
                                                 <% if (+east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim() > +east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()){ %>
                                                     <% lowSeedWins = lowSeedWins + 1 %>
-                                                    <span class="game<%=i+1%> game lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                    <span class="game<%=i+1%> game <%=east3rd6thMatchup.team2.toLowerCase()%>Win lowSeedWin<%=lowSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                                 <% } else { %>
                                                     <% topSeedWins = topSeedWins + 1 %>
-                                                    <span class="game<%=i+1%> game topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
+                                                    <span class="game<%=i+1%> game <%=east3rd6thMatchup.team1.toLowerCase()%>Win topSeedWin<%=topSeedWins%>">▶<span class="toolTipText"><%= `Game ${i+1}: ${east3rd6thMatchup.gameScores[i].awayTeam.slice(-3).trim()}-${east3rd6thMatchup.gameScores[i].homeTeam.slice(-3).trim()} ` %></span></span>
                                                 <% }   %>  
                                             <% } %>
                                    <% } %>      
@@ -704,8 +706,9 @@
            </section>
             
         </main>
-
+        
         <footer>
+            
             <section class = 'westLotto'>
                 <% const west9th = info.find(collection => collection.some(item => item.conference === 'west' && item.seed === '9th')); %>
                 <% const west9thName = teamNames[info.indexOf(west9th)].slice(0,3) %>
@@ -782,8 +785,6 @@
                 </section>
             </section>
         </footer>
-
-
 		<script type="text/javascript" src="../js/new.js"></script> 
 	</body>
 </html>
