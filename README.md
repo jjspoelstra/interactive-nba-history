@@ -1,7 +1,7 @@
 # Interactive-History-of-the-NBA
 This project showcases a year-by-year history of the NBA. I set out to create a site that takes some of the statistical power of a site like basketball refernce, and combines it with a visual context, rather that lines and lines of data. Too often, information is spread across multiple locations and it is hard to paint a full picture. 
 
-<img src="https://github.com/jjspoelstra/jjspoelstra/raw/main/images/gifNBA.gif" />
+<img src="https://github.com/jjspoelstra/jjspoelstra/raw/main/images/newGifNBA.gif" />
 
 
 # How It's Made:
