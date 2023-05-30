@@ -745,6 +745,10 @@ footer {
   justify-content: space-between;
 }
 
+.right {
+  margin-left: auto;
+}
+
 
 .dropbtn {
   background-color: #3f51b5;
