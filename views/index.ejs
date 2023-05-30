@@ -42,7 +42,9 @@
                     <div class="flex">
                         <button class="dropbtn"><a href="<%= `${+year-1}` %>">prev</a></button>
                         <span class = 'year'> <%= `${year}` %> </span>
+                        <% if (year != 2022) {%>
                         <button class="dropbtn"><a href="<%= `${+year+1}` %>">next</a></button>
+                        <% } %>
                     </div>
                 </section>
 
