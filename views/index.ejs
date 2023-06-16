@@ -32,7 +32,7 @@
                     <div class="dropdown">
                         <button class="dropbtn">Brackets</button>
                         <div id="myDropdown" class="dropdown-content">
-                          <% for (let i = 2022; i >= 1991; i--){ %>
+                          <% for (let i = 2023; i >= 1991; i--){ %>
                             <a href="<%= i %>"> <%= `${i}` %> </a>
                           <% } %>
                           <!-- Add more items as needed -->
@@ -42,7 +42,7 @@
                     <div class="flex">
                         <button class="dropbtn"><a href="<%= `${+year-1}` %>">prev</a></button>
                         <span class = 'year'> <%= `${year}` %> </span>
-                        <% if (year != 2022) {%>
+                        <% if (year != 2023) {%>
                         <button class="dropbtn"><a href="<%= `${+year+1}` %>">next</a></button>
                         <% } %>
                     </div>

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 module.exports = {
     GetTeamStats: async (year) => {
 
-        if (year < 2007){
+        if (year < 2007 && year > 1990){
           try {
             mongoose.disconnect()
             const conn = await mongoose.connect(process.env.DB_STRING_1991_2006, {
@@ -12,6 +12,20 @@ module.exports = {
               useNewUrlParser: true,
               useUnifiedTopology: true,
               
+            })
+        
+            console.log(`MongoDB Connected: ${conn.connection.host}`)
+          } catch (err) {
+            console.error(err)
+            process.exit(1)
+          }
+        } else if (year > 2022 || year < 1991) {
+          try {
+            mongoose.disconnect()
+            const conn = await mongoose.connect(process.env.DB_STRING_1977_1990_2023, {
+              dbName: `stats_${year}`,
+              useNewUrlParser: true,
+              useUnifiedTopology: true,
             })
         
             console.log(`MongoDB Connected: ${conn.connection.host}`)
