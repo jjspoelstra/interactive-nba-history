@@ -14,7 +14,9 @@ This project is currently being updated to run with Next.JS rather than through 
 So far, there is a simple interface. The UI portion of the site will be updated along with the Next.js port.
 Media queries need to be optimized further so that mobile users will have an enjoyable experience using the website as well. 
 
-There are some issues with games registering as the wrong color, or being credited next to a certain team. I expect this issue would be easier to fix with React than within EJS. 
+There are some issues with games registering as the wrong color, or being credited next to a certain team. I expect this issue would be easier to fix with Next than within EJS. 
+
+After the transition, I will begin to implement community involvement (ex: commenting on series, teams, various events across the league through history)
 
 # Lessons Learned:
 Scraping capabilities and how finicky and inconsistent the websites can be in terms of where data is kept. It is not always uniform, so we have to find ways to work around this inconsistency. 
